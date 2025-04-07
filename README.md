@@ -1,36 +1,47 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
-
 ## Getting Started
 
-First, run the development server:
+# Setup
+
+Add a `.env` file in the project root. Add the API key.
+
+```bash
+TMDB_API_KEY=
+TMDB_API_URL = "https://api.themoviedb.org/3"
+```
+
+Run development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Use Docker
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. `npm run docker:build`
+2. `npm run docker:start`
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Brief
 
-## Learn More
+Brief
+Martin's Movies is a client who reviews movies online. They have moved all of their movies to an online movie database which is only accessible via an API.
 
-To learn more about Next.js, take a look at the following resources:
+They need to:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- build a new paginated listing page to pull all data from their new database
+- allow customers to search by different movie attributes which are:
+  - Keyword
+- mark a movie as 'watched' so when they open the listing page again in the same browser it will still be marked as 'watched'
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Martin's Movies would like to link the Read More button for each movie off to the IMDB page if the imdb_id is set for a movie.
 
-## Deploy on Vercel
+He would like the design to match a theme he liked but make all make all links a dead link (eg <a href="#">x</a>) for now:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+https://gnodesign.com/templates/movify/movie-grid3.html (feel free to put a centered search bar just above the listing for search)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Deliverables:
+
+- a ReactJS/NextJS App broken up as you see fit (languages isn't too important so TS is fine too)
+
+We are using The Movie Database which is located here:
+
+https://developers.themoviedb.org/3/getting-started/introduction
